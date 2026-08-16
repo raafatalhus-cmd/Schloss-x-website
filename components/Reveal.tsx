@@ -1,6 +1,12 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { createElement, useEffect, useRef, useState } from "react";
+
+// Restricting to the tag names we actually use keeps this simple and
+// avoids TypeScript trying to resolve the full JSX.IntrinsicElements
+// union for a dynamic ref, which is what caused the "too complex to
+// represent" build error.
+type TagName = "div" | "article" | "p" | "section";
 
 /**
  * Wraps content that should gently fade/slide in on scroll.
@@ -15,12 +21,12 @@ import { useEffect, useRef, useState } from "react";
 export default function Reveal({
   children,
   delay = 0,
-  as: Tag = "div",
+  as = "div",
   className = "",
 }: {
   children: React.ReactNode;
   delay?: number;
-  as?: keyof React.JSX.IntrinsicElements;
+  as?: TagName;
   className?: string;
 }) {
   const ref = useRef<HTMLElement | null>(null);
@@ -60,14 +66,13 @@ export default function Reveal({
     };
   }, []);
 
-  return (
-    // @ts-expect-error — dynamic tag with ref is fine at runtime
-    <Tag
-      ref={ref}
-      className={`reveal ${enabled ? "enabled" : ""} ${inView ? "in" : ""} ${className}`.trim()}
-      style={delay ? { transitionDelay: `${delay}s` } : undefined}
-    >
-      {children}
-    </Tag>
+  return createElement(
+    as,
+    {
+      ref,
+      className: `reveal ${enabled ? "enabled" : ""} ${inView ? "in" : ""} ${className}`.trim(),
+      style: delay ? { transitionDelay: `${delay}s` } : undefined,
+    },
+    children
   );
 }
