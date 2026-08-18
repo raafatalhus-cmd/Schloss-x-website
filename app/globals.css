@@ -713,33 +713,37 @@ h2 {
 /* ---------- Process ---------- */
 .process {
   background: var(--paper);
-  padding-top: 155px;
+  padding-top: 150px;
 }
 .steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   position: relative;
-  border: 1px solid var(--line);
-  background: var(--paper);
+  gap: 34px;
+  padding-top: 4px;
+}
+.steps:before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 25px;
+  right: 25px;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    var(--kupfer) 0%,
+    var(--kupfer-soft) 48%,
+    var(--line) 100%
+  );
 }
 .steps article {
-  min-height: 205px;
-  padding: 26px 28px 30px;
-  border-right: 1px solid var(--line);
+  min-width: 0;
+  padding: 0 24px 0 0;
   position: relative;
-  display: flex;
-  flex-direction: column;
-  transition: background 0.3s;
-}
-.steps article:last-child {
-  border-right: 0;
-}
-.steps article:hover {
-  background: var(--stone);
 }
 .step-marker {
-  width: 48px;
-  height: 48px;
+  width: 50px;
+  height: 50px;
   display: grid;
   place-items: center;
   border: 1px solid var(--kupfer);
@@ -747,25 +751,21 @@ h2 {
   background: var(--paper);
   position: relative;
   z-index: 1;
-  margin-bottom: 38px;
+  margin-bottom: 30px;
+  box-shadow: 0 0 0 8px var(--paper);
   transition:
     color 0.3s,
     background 0.3s,
-    transform 0.3s;
-}
-.steps article:not(:last-child):after {
-  content: "";
-  position: absolute;
-  height: 1px;
-  left: 76px;
-  right: -1px;
-  top: 50px;
-  background: linear-gradient(90deg, var(--kupfer), var(--line));
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 .steps article:hover .step-marker {
   color: #fff;
   background: var(--kupfer);
   transform: translateY(-3px);
+  box-shadow:
+    0 0 0 8px var(--paper),
+    0 8px 24px rgba(171, 91, 44, 0.2);
 }
 .steps .step-num {
   font-family: var(--mono);
@@ -774,27 +774,20 @@ h2 {
   color: inherit;
 }
 .step-copy {
-  margin-top: auto;
-}
-.step-label {
-  display: block;
-  font-family: var(--mono);
-  font-size: 10px;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--kupfer);
-  margin-bottom: 12px;
+  max-width: 250px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
 }
 .steps h3 {
   font-family: var(--display);
   font-weight: 600;
-  font-size: 19px;
-  margin: 0 0 10px;
+  font-size: 21px;
+  margin: 0 0 12px;
 }
 .steps p {
   color: var(--muted);
   font-size: 14px;
-  line-height: 1.65;
+  line-height: 1.7;
   margin: 0;
   padding-bottom: 0;
 }
@@ -933,19 +926,40 @@ footer .legal {
     margin-bottom: 20px;
   }
   .steps {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
+    gap: 0;
+    padding: 0 0 0 76px;
   }
-  .steps article:nth-child(2) {
-    border-right: 0;
+  .steps:before {
+    top: 25px;
+    bottom: 25px;
+    left: 24px;
+    right: auto;
+    width: 1px;
+    height: auto;
+    background: linear-gradient(
+      180deg,
+      var(--kupfer) 0%,
+      var(--kupfer-soft) 48%,
+      var(--line) 100%
+    );
   }
-  .steps article:nth-child(2n + 1) {
-    border-right: 1px solid var(--line);
+  .steps article {
+    padding: 0 0 44px;
   }
-  .steps article:nth-child(-n + 2) {
-    border-bottom: 1px solid var(--line);
+  .steps article:last-child {
+    padding-bottom: 0;
   }
-  .steps article:not(:last-child):after {
-    display: none;
+  .step-marker {
+    position: absolute;
+    left: -76px;
+    top: 0;
+    margin: 0;
+  }
+  .step-copy {
+    max-width: 520px;
+    padding-top: 2px;
+    border-top: 0;
   }
   .contact-meta {
     gap: 36px;
@@ -960,19 +974,14 @@ footer .legal {
   h1 {
     font-size: 38px;
   }
+  .process {
+    padding-top: 110px;
+  }
   .steps {
-    grid-template-columns: 1fr;
-  }
-  .steps article {
-    border-right: none !important;
-    border-bottom: 1px solid var(--line);
-    min-height: 185px;
-  }
-  .steps article:last-child {
-    border-bottom: 0;
+    padding-left: 68px;
   }
   .step-marker {
-    margin-bottom: 28px;
+    left: -68px;
   }
 }
 
