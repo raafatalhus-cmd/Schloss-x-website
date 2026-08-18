@@ -48,11 +48,11 @@ export default function Header() {
           id="main-navigation"
           aria-label="Hauptnavigation"
         >
-          <a href="#leistungen" onClick={() => setOpen(false)}>
-            Leistungen
-          </a>
           <a href="#ansatz" onClick={() => setOpen(false)}>
             Ansatz
+          </a>
+          <a href="#leistungen" onClick={() => setOpen(false)}>
+            Leistungen
           </a>
           <a href="#projekte" onClick={() => setOpen(false)}>
             Projekte
