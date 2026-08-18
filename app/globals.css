@@ -92,7 +92,7 @@ img {
 
 /* ---------- Header ---------- */
 .site-header {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
@@ -102,6 +102,19 @@ img {
   justify-content: space-between;
   padding: 34px 5vw;
   color: #fff;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition:
+    background 0.3s ease,
+    border-color 0.3s ease,
+    padding 0.3s ease;
+}
+.site-header.scrolled {
+  background: rgba(28, 26, 22, 0.92);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--line-on-dark);
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .brand {
   font-family: var(--display);
@@ -341,6 +354,7 @@ h1 {
 /* ---------- Section basics ---------- */
 .section {
   padding: 130px 5vw;
+  scroll-margin-top: 100px;
 }
 .section-label {
   font-family: var(--mono);
@@ -372,6 +386,7 @@ h2 {
   margin: 0 auto;
   padding: 130px 5vw;
   align-items: start;
+  scroll-margin-top: 100px;
 }
 .statement .section-label {
   padding-top: 0.4em;
@@ -464,6 +479,7 @@ h2 {
 .qualification {
   background: var(--stone);
   padding: 0 5vw 130px;
+  scroll-margin-top: 100px;
 }
 .qual-card {
   background: var(--paper);
