@@ -38,12 +38,31 @@ const fraunces = Fraunces({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://schloss-x-website-fawn.vercel.app"),
   title: "SCHLOSS-X — Elektrotechnik & intelligente Gebäudesysteme",
   description:
     "SCHLOSS-X verbindet fundiertes Elektrohandwerk mit moderner IoT-Kompetenz — für Technik, die zuverlässig zusammenspielt. Hasbergen, Osnabrück und Umgebung.",
   icons: {
     icon: "/favicon.svg",
     shortcut: "/favicon.svg",
+    apple: "/favicon.svg",
+  },
+  openGraph: {
+    type: "website",
+    locale: "de_DE",
+    url: "/",
+    siteName: "SCHLOSS-X",
+    title: "SCHLOSS-X — Elektrotechnik & intelligente Gebäudesysteme",
+    description:
+      "Moderne Elektrotechnik und intelligente Gebäudesysteme für Hasbergen, Osnabrück und Umgebung.",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "SCHLOSS-X" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "SCHLOSS-X — Elektrotechnik & intelligente Gebäudesysteme",
+    description:
+      "Moderne Elektrotechnik und intelligente Gebäudesysteme für Hasbergen, Osnabrück und Umgebung.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -57,7 +76,29 @@ export default function RootLayout({
       lang="de"
       className={`${archivo.variable} ${plexSans.variable} ${plexMono.variable} ${fraunces.variable}`}
     >
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Electrician",
+              name: "SCHLOSS-X e.K.",
+              url: "https://schloss-x-website-fawn.vercel.app",
+              email: "kontakt@schloss-x.de",
+              address: {
+                "@type": "PostalAddress",
+                streetAddress: "Riedweg 22",
+                postalCode: "49205",
+                addressLocality: "Hasbergen",
+                addressCountry: "DE",
+              },
+              areaServed: ["Hasbergen", "Osnabrück", "Osnabrücker Land"],
+            }),
+          }}
+        />
+        {children}
+      </body>
     </html>
   );
 }
