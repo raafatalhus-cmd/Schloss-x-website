@@ -5,6 +5,7 @@ import { company } from "@/lib/content";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
@@ -14,9 +15,18 @@ export default function Header() {
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
+  useEffect(() => {
+    function onScroll() {
+      setScrolled(window.scrollY > 40);
+    }
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
   return (
     <>
-      <header className="site-header">
+      <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
         <a className="brand" href="#top">
           {company.brandShort}
           <b>{company.brandAccent}</b>
