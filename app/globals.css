@@ -521,6 +521,7 @@ h2 {
   letter-spacing: 0.04em;
   margin-top: 4px;
 }
+.qual-body {
   padding: 64px;
 }
 .qual-body h2 {
@@ -762,4 +763,67 @@ a:focus-visible,
 button:focus-visible {
   outline: 2px solid var(--kupfer-soft);
   outline-offset: 3px;
+}
+
+/* ---------- Legal pages (Impressum / Datenschutz) ---------- */
+.legal-page {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 160px 6vw 130px;
+}
+.legal-page .section-label {
+  margin-bottom: 20px;
+}
+.legal-page h1 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: clamp(30px, 4vw, 44px);
+  letter-spacing: -0.015em;
+  margin: 0 0 50px;
+}
+.legal-page h2 {
+  font-size: 20px;
+  margin: 56px 0 16px;
+}
+.legal-page h2:first-of-type {
+  margin-top: 0;
+}
+.legal-page p,
+.legal-page li {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+.legal-page ul {
+  padding-left: 20px;
+  margin: 0 0 20px;
+}
+.legal-page strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+.legal-page .back-link {
+  display: inline-block;
+  margin-top: 60px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  color: var(--muted);
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 4px;
+}
+.legal-page .back-link:hover {
+  color: var(--kupfer);
+  border-color: var(--kupfer);
+}
+.legal-note {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--kupfer);
+  padding: 16px 20px;
+  font-size: 13.5px;
+  margin: 0 0 40px;
+}
+.legal-note strong {
+  color: var(--kupfer);
 }
