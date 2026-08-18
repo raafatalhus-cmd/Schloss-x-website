@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import { services } from "@/lib/content";
+import Link from "next/link";
 
 function ServiceIcon({ index }: { index: number }) {
   const common = {
@@ -80,6 +81,7 @@ export default function Services() {
             <div className="service-copy">
               <h3>{s.title}</h3>
               <p>{s.text}</p>
+              <Link className="service-link" href={`/leistungen/${s.slug}`}>Mehr erfahren →</Link>
             </div>
           </Reveal>
         ))}

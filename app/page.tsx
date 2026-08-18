@@ -6,6 +6,10 @@ import Qualification from "@/components/Qualification";
 import Process from "@/components/Process";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import Projects from "@/components/Projects";
+import Testimonials from "@/components/Testimonials";
+import MobileContactBar from "@/components/MobileContactBar";
+import TestModeBanner from "@/components/TestModeBanner";
 
 export default function Page() {
   return (
@@ -29,13 +33,17 @@ export default function Page() {
       </svg>
 
       <Header />
+      <TestModeBanner />
       <Hero />
       <Statement />
       <Services />
       <Qualification />
+      <Projects />
+      <Testimonials />
       <Process />
       <Contact />
       <Footer />
+      <MobileContactBar />
     </>
   );
 }
