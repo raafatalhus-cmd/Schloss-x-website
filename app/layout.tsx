@@ -85,7 +85,7 @@ export default function RootLayout({
               "@type": "Electrician",
               name: "SCHLOSS-X e.K.",
               url: "https://schloss-x-website-fawn.vercel.app",
-              email: "kontakt@schloss-x.de",
+              email: "info@schloss-x.de",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "Riedweg 22",

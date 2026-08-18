@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { company } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "Impressum | SCHLOSS-X",
@@ -21,20 +22,20 @@ export default function ImpressumPage() {
 
       <h2>Angaben gemäß § 5 DDG</h2>
       <p>
-        <strong><span className="legal-placeholder">FIRMENNAME + RECHTSFORM</span></strong>
+        <strong>{company.name}</strong>
         <br />
-        Inhaber: <span className="legal-placeholder">VOLLSTÄNDIGER NAME</span>
+        Inhaber: Hayyan Khatib
         <br />
-        <span className="legal-placeholder">STRASSE + HAUSNUMMER</span>
+        {company.address.street}
         <br />
-        <span className="legal-placeholder">PLZ + ORT</span>
+        {company.address.zipCity}
       </p>
 
       <h2>Kontakt</h2>
       <p>
         Telefon: <span className="legal-placeholder">BITTE ERGÄNZEN</span>
         <br />
-        E-Mail: <span className="legal-placeholder">E-MAIL-ADRESSE</span>
+        E-Mail: <a href={`mailto:${company.email}`}>{company.email}</a>
       </p>
 
       <h2>Registereintrag</h2>
