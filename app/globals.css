@@ -302,6 +302,60 @@ h1 {
   height: auto;
   max-width: 560px;
 }
+.plan-fill path {
+  fill: var(--ink-soft);
+  opacity: 0.32;
+}
+.plan-lines {
+  fill: none;
+  stroke: #5a574e;
+  stroke-width: 1.25;
+  opacity: 0.75;
+}
+.plan-lines .plan-detail {
+  stroke: #3a382f;
+  opacity: 0.8;
+}
+.plan-labels,
+.node-labels,
+.system-status text {
+  font-family: var(--mono);
+  letter-spacing: 1.2px;
+  fill: #77746a;
+}
+.plan-labels { font-size: 8px; }
+.node-labels {
+  font-size: 7px;
+  letter-spacing: 0.8px;
+  fill: var(--muted-on-dark);
+}
+#circuitPath,
+.circuit-secondary {
+  fill: none;
+  stroke: var(--kupfer-soft);
+  stroke-width: 2.2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  animation: draw 1.5s 0.2s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+}
+.circuit-secondary {
+  stroke: var(--kupfer);
+  stroke-width: 1.35;
+  opacity: 0.88;
+  animation-delay: 0.55s;
+}
+.node-ring {
+  fill: var(--ink);
+  stroke: var(--kupfer-soft);
+  stroke-width: 2;
+}
+.node-core { fill: var(--kupfer-soft); }
+.system-status { opacity: 0.72; }
+.system-status circle { fill: none; stroke: #5a574e; }
+.system-status path { stroke: var(--kupfer-soft); stroke-width: 1.5; }
+.system-status text { font-size: 6px; letter-spacing: 1px; }
 .hero-region {
   position: absolute;
   z-index: 2;
