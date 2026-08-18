@@ -1,5 +1,4 @@
 import Reveal from "./Reveal";
-import { qualFacts } from "@/lib/content";
 
 export default function Qualification() {
   return (
@@ -27,23 +26,14 @@ export default function Qualification() {
             <em>Digitale Kompetenz.</em>
           </h2>
           <p className="qual-copy">
-            SCHLOSS-X verbindet die fachliche Zulassung im Elektrohandwerk mit
-            einem Masterstudium im Bereich Internet of Things. Das schafft
-            eine besondere Perspektive: solide elektrische Grundlagen und ein
-            tiefes Verständnis für vernetzte Systeme.
+            Hayyan Khatib ist Inhaber und persönlicher Ansprechpartner bei
+            SCHLOSS-X. Im Mittelpunkt stehen eine klare Abstimmung und
+            technische Lösungen, die verständlich bleiben.
           </p>
-          <div className="qual-facts">
-            {qualFacts.map((f) => (
-              <div key={f.value}>
-                <strong>{f.value}</strong>
-                <span>{f.label}</span>
-              </div>
-            ))}
+          <div className="owner-fact">
+            <strong>Hayyan Khatib</strong>
+            <span>Inhaber &amp; persönlicher Ansprechpartner</span>
           </div>
-          <small className="qual-note">
-            Die genaue Abschluss- und Zulassungsbezeichnung wird in der
-            finalen Website ergänzt.
-          </small>
         </div>
       </Reveal>
     </section>

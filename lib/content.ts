@@ -49,12 +49,6 @@ export const steps = [
   { number: "04", title: "Begleiten", text: "Sie erhalten eine verständliche Übergabe und persönlichen Service." },
 ] as const;
 
-export const qualFacts = [
-  { value: "HWK", label: "Fachlich qualifiziert im Elektrohandwerk" },
-  { value: "M.Sc. IoT", label: "Akademische Kompetenz für vernetzte Systeme" },
-  { value: "Hayyan Khatib", label: "Inhaber & persönlicher Ansprechpartner" },
-] as const;
-
 export const company = {
   name: "Schloss-X e.K.",
   brandShort: "SCHLOSS",
