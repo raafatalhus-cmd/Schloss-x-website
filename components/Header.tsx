@@ -60,13 +60,16 @@ export default function Header() {
           <a href="#unternehmen" onClick={() => setOpen(false)}>
             Unternehmen
           </a>
-          <a className="mobile-contact-link" href="#kontakt" onClick={() => setOpen(false)}>
+          <a href="#kontakt" onClick={() => setOpen(false)}>
             Kontakt
           </a>
         </nav>
-        <a className="header-cta" href="#kontakt">
-          Projekt anfragen
-        </a>
+        <div className="header-actions">
+          <a className="header-mail" href="mailto:info@schloss-x.de" aria-label="E-Mail an SCHLOSS-X">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18v12H3zM3.5 7l8.5 7 8.5-7" /></svg>
+          </a>
+          <a className="header-cta" href="#kontakt">Projekt anfragen</a>
+        </div>
         <button
           className="menu-btn"
           aria-label={open ? "Menü schließen" : "Menü öffnen"}
