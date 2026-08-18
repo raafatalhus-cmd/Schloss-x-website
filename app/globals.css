@@ -613,6 +613,22 @@ h2 {
   max-width: 520px;
   margin: 0 0 50px;
 }
+.owner-fact {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+.owner-fact strong {
+  font-family: var(--display);
+  font-size: 20px;
+  font-weight: 600;
+}
+.owner-fact span {
+  color: var(--muted);
+  font-size: 13px;
+}
 .qual-facts {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
