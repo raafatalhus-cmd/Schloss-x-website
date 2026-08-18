@@ -25,7 +25,6 @@ export default function Process() {
               <span className="step-num">{s.number}</span>
             </div>
             <div className="step-copy">
-              <span className="step-label">Schritt {i + 1}</span>
               <h3>{s.title}</h3>
               <p>{s.text}</p>
             </div>
