@@ -29,10 +29,10 @@ export default function Header() {
       <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
         <a className="brand brand-logo" href="#top" aria-label="SCHLOSS-X Startseite">
           <Image
-            src="/schloss-x-logo.png"
+            src="/schloss-x-logo.svg"
             alt="SCHLOSS-X"
             width={1200}
-            height={354}
+            height={300}
             priority
           />
         </a>

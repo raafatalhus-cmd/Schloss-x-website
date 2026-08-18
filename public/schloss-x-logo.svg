@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="title desc">
+  <title id="title">SCHLOSS-X Logo</title>
+  <desc id="desc">Technisches Schlosssymbol mit Kupferblitz und sechs Verbindungspunkten neben der Wortmarke SCHLOSS-X.</desc>
+  <g id="symbol" transform="translate(28 24)">
+    <path d="M18 10H78V46H112V10H172V46H206V10H266V78L250 92V206L266 220V246H18V220L34 206V92L18 78Z" fill="#0B1B2A" stroke="#C98A5E" stroke-width="8" stroke-linejoin="miter"/>
+    <g fill="none" stroke="#C98A5E" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M64 78L106 112"/><path d="M58 128H103"/><path d="M64 184L106 151"/>
+      <path d="M220 78L178 112"/><path d="M226 128H181"/><path d="M220 184L178 151"/>
+    </g>
+    <g fill="#0B1B2A" stroke="#C98A5E" stroke-width="7">
+      <circle cx="54" cy="70" r="12"/><circle cx="48" cy="128" r="12"/><circle cx="54" cy="192" r="12"/>
+      <circle cx="230" cy="70" r="12"/><circle cx="236" cy="128" r="12"/><circle cx="230" cy="192" r="12"/>
+    </g>
+    <path d="M158 26L103 132H137L112 228L184 113H148Z" fill="#C98A5E" stroke="#0B1B2A" stroke-width="5" stroke-linejoin="miter"/>
+  </g>
+  <text x="344" y="190" fill="#F2F1EC" font-family="Arial, Helvetica, sans-serif" font-size="126" font-weight="700" letter-spacing="-3">SCHLOSS<tspan fill="#C98A5E">-X</tspan></text>
+</svg>
