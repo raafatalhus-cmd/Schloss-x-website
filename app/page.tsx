@@ -35,8 +35,8 @@ export default function Page() {
       <Header />
       <TestModeBanner />
       <Hero />
-      <Services />
       <Statement />
+      <Services />
       <Projects />
       <Process />
       <Qualification />
