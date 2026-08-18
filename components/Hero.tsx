@@ -1,81 +1,60 @@
 import { company } from "@/lib/content";
 
 export default function Hero() {
+  const nodes = [[76, 126], [150, 262], [258, 118], [418, 284], [366, 430], [438, 430]];
+
   return (
     <section className="hero" id="top">
       <div className="grain" style={{ filter: "url(#grainFilter)" }} />
       <div className="hero-copy">
-        <p className="eyebrow">
-          <i /> Elektrotechnik &amp; Gebäudesysteme
-        </p>
-        <h1>
-          Elektrotechnik.
-          <br />
-          <em>Intelligent</em> verbunden.
-        </h1>
+        <p className="eyebrow"><i /> Elektrotechnik &amp; Gebäudesysteme</p>
+        <h1>Elektrotechnik.<br /><em>Intelligent</em> verbunden.</h1>
         <p className="hero-text">
           SCHLOSS-X verbindet fundiertes Elektrohandwerk mit moderner
           IoT-Kompetenz – für Technik, die zuverlässig zusammenspielt und
           einfach funktioniert.
         </p>
         <div className="hero-actions">
-          <a className="button primary" href="#kontakt">
-            Projekt besprechen →
-          </a>
-          <a className="text-link" href="#leistungen">
-            Leistungen ansehen
-          </a>
+          <a className="button primary" href="#kontakt">Projekt besprechen →</a>
+          <a className="text-link" href="#leistungen">Leistungen ansehen</a>
         </div>
       </div>
 
       <div className="hero-visual" aria-hidden="true">
-        {/* Signature element: hand-authored schematic / floor-plan motif,
-            referencing real electrical planning drawings rather than
-            generic tech iconography or a stock photo we can't back up. */}
         <svg viewBox="0 0 520 560" xmlns="http://www.w3.org/2000/svg">
-          <rect x="40" y="40" width="440" height="480" fill="none" stroke="#3a382f" strokeWidth="1" />
-          <line x1="40" y1="180" x2="480" y2="180" stroke="#3a382f" strokeWidth="1" />
-          <line x1="40" y1="340" x2="480" y2="340" stroke="#3a382f" strokeWidth="1" />
-          <line x1="230" y1="40" x2="230" y2="180" stroke="#3a382f" strokeWidth="1" />
-          <line x1="340" y1="340" x2="340" y2="520" stroke="#3a382f" strokeWidth="1" />
-
-          <path
-            id="circuitPath"
-            d="M70 460 L70 200 L150 200 L150 100 L300 100 L300 210 L440 210 L440 300 L380 300 L380 400 L440 400"
-            fill="none"
-            stroke="#9c5a32"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            pathLength={1}
-            style={{
-              strokeDasharray: 1,
-              strokeDashoffset: 1,
-              animation: "draw 1.8s .3s cubic-bezier(.65,0,.35,1) forwards",
-            }}
-          />
-          <circle className="node" cx="70" cy="460" r="5" fill="#9c5a32" />
-          <circle className="node" cx="150" cy="100" r="5" fill="#9c5a32" />
-          <circle className="node" cx="300" cy="210" r="5" fill="#c98a5e" />
-          <circle className="node" cx="440" cy="210" r="4" fill="#c98a5e" />
-          <circle className="node" cx="380" cy="400" r="5" fill="#9c5a32" />
-          <circle className="node" cx="440" cy="400" r="4" fill="#c98a5e" />
-
-          <text x="70" y="490" fontFamily="IBM Plex Mono, monospace" fontSize="10" fill="#a6a49a" letterSpacing="1">
-            LICHT
-          </text>
-          <text x="300" y="240" fontFamily="IBM Plex Mono, monospace" fontSize="10" fill="#a6a49a" letterSpacing="1">
-            NETZWERK
-          </text>
-          <text x="380" y="430" fontFamily="IBM Plex Mono, monospace" fontSize="10" fill="#a6a49a" letterSpacing="1">
-            SICHERHEIT
-          </text>
+          <g className="plan-fill"><path d="M40 46H480V514H40Z" /></g>
+          <g className="plan-lines">
+            <path d="M40 46H480V514H40Z" />
+            <path d="M40 188H236V46M236 188H480M320 188V352H480M40 352H174V514M174 352H320M392 352V514" />
+            <path className="plan-detail" d="M88 188V164M212 188V164M320 236H344M174 402H198M392 402H416" />
+          </g>
+          <g className="plan-labels">
+            <text x="58" y="72">01 · LICHT</text>
+            <text x="338" y="214">02 · NETZWERK</text>
+            <text x="58" y="378">03 · SICHERHEIT</text>
+          </g>
+          <path id="circuitPath" d="M76 126H150V262H258V118H418V284H366V430H438" pathLength={1} />
+          <path className="circuit-secondary" d="M150 262H92V430H238V388H366" pathLength={1} />
+          <g className="nodes">
+            {nodes.map(([cx, cy], index) => (
+              <g className="node" key={`${cx}-${cy}`} style={{ animationDelay: `${0.5 + index * 0.18}s` }}>
+                <circle className="node-ring" cx={cx} cy={cy} r="7" />
+                <circle className="node-core" cx={cx} cy={cy} r="2.5" />
+              </g>
+            ))}
+          </g>
+          <g className="node-labels">
+            <text x="62" y="111">L-01</text><text x="244" y="102">N-01</text>
+            <text x="404" y="269">N-02</text><text x="352" y="452">S-01</text>
+            <text x="424" y="452">S-02</text>
+          </g>
+          <g className="system-status" transform="translate(414 76)">
+            <circle cx="0" cy="0" r="18" /><path d="M-7 0H7M0-7V7" />
+            <text x="-24" y="32">SYSTEM AKTIV</text>
+          </g>
         </svg>
       </div>
-      <p className="hero-region">
-        <b>Standort · </b>
-        {company.serviceArea}
-      </p>
+      <p className="hero-region"><b>Standort · </b>{company.serviceArea}</p>
     </section>
   );
 }
