@@ -15,10 +15,8 @@ export default function Footer() {
       <p>Moderne Elektrotechnik. Intelligent verbunden.</p>
       <div className="legal">
         <span>© {new Date().getFullYear()} {company.name}</span>
-        {/* TODO: echte Unterseiten verlinken, sobald Impressum/Datenschutz
-            vorliegen — siehe Analyse Punkt 6/7, Platzhalter-Links vermeiden */}
-        <a href="#">Impressum</a>
-        <a href="#">Datenschutz</a>
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
       </div>
     </footer>
   );
