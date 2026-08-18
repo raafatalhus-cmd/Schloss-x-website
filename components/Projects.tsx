@@ -17,7 +17,14 @@ export default function Projects() {
           <Reveal as="article" key={project.slug} delay={index * 0.06}>
             <div className={`project-visual visual-${index + 1}`} aria-hidden="true">
               <span>{project.status}</span>
-              <i />
+              <div className="project-diagram">
+                <i className="diagram-line line-a" />
+                <i className="diagram-line line-b" />
+                <i className="diagram-node node-a" />
+                <i className="diagram-node node-b" />
+                <i className="diagram-node node-c" />
+              </div>
+              <small>{String(index + 1).padStart(2, "0")} / 03</small>
             </div>
             <div className="project-content">
               <span className="project-category">{project.category} · {project.location}</span>

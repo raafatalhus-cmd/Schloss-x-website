@@ -35,12 +35,12 @@ export default function Page() {
       <Header />
       <TestModeBanner />
       <Hero />
-      <Statement />
       <Services />
-      <Qualification />
+      <Statement />
       <Projects />
-      <Testimonials />
       <Process />
+      <Qualification />
+      <Testimonials />
       <Contact />
       <Footer />
       <MobileContactBar />

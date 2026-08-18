@@ -18,6 +18,11 @@ export default function Hero() {
           <a className="button primary" href="#kontakt">Projekt besprechen →</a>
           <a className="text-link" href="#leistungen">Leistungen ansehen</a>
         </div>
+        <div className="hero-proof" aria-label="Arbeitsweise von SCHLOSS-X">
+          <span><b>01</b> Persönlich geplant</span>
+          <span><b>02</b> Sauber umgesetzt</span>
+          <span><b>03</b> Verständlich übergeben</span>
+        </div>
       </div>
 
       <div className="hero-visual" aria-hidden="true">

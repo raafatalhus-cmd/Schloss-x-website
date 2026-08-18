@@ -54,6 +54,9 @@ export default function Header() {
           <a href="#ansatz" onClick={() => setOpen(false)}>
             Ansatz
           </a>
+          <a href="#projekte" onClick={() => setOpen(false)}>
+            Projekte
+          </a>
           <a href="#unternehmen" onClick={() => setOpen(false)}>
             Unternehmen
           </a>
