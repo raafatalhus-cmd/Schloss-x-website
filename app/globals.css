@@ -717,21 +717,72 @@ h2 {
 .steps {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-top: 1px solid var(--line);
+  position: relative;
+  border: 1px solid var(--line);
+  background: var(--paper);
 }
 .steps article {
-  padding: 32px 28px 0 0;
+  min-height: 260px;
+  padding: 28px 28px 34px;
   border-right: 1px solid var(--line);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  transition: background 0.3s;
 }
-.steps article:not(:first-child) {
-  padding-left: 28px;
+.steps article:last-child {
+  border-right: 0;
+}
+.steps article:hover {
+  background: var(--stone);
+}
+.step-marker {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--kupfer);
+  border-radius: 50%;
+  background: var(--paper);
+  position: relative;
+  z-index: 1;
+  margin-bottom: 58px;
+  transition:
+    color 0.3s,
+    background 0.3s,
+    transform 0.3s;
+}
+.steps article:not(:last-child):after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  left: 76px;
+  right: -1px;
+  top: 52px;
+  background: linear-gradient(90deg, var(--kupfer), var(--line));
+}
+.steps article:hover .step-marker {
+  color: #fff;
+  background: var(--kupfer);
+  transform: translateY(-3px);
 }
 .steps .step-num {
   font-family: var(--mono);
-  font-size: 12px;
-  color: var(--kupfer);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: inherit;
+}
+.step-copy {
+  margin-top: auto;
+}
+.step-label {
   display: block;
-  margin-bottom: 70px;
+  font-family: var(--mono);
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--kupfer);
+  margin-bottom: 12px;
 }
 .steps h3 {
   font-family: var(--display);
@@ -744,7 +795,7 @@ h2 {
   font-size: 14px;
   line-height: 1.65;
   margin: 0;
-  padding-bottom: 36px;
+  padding-bottom: 0;
 }
 
 /* ---------- Contact ---------- */
@@ -883,8 +934,17 @@ footer .legal {
   .steps {
     grid-template-columns: 1fr 1fr;
   }
+  .steps article:nth-child(2) {
+    border-right: 0;
+  }
   .steps article:nth-child(2n + 1) {
     border-right: 1px solid var(--line);
+  }
+  .steps article:nth-child(-n + 2) {
+    border-bottom: 1px solid var(--line);
+  }
+  .steps article:not(:last-child):after {
+    display: none;
   }
   .contact-meta {
     gap: 36px;
@@ -904,7 +964,14 @@ footer .legal {
   }
   .steps article {
     border-right: none !important;
-    padding-left: 0 !important;
+    border-bottom: 1px solid var(--line);
+    min-height: 220px;
+  }
+  .steps article:last-child {
+    border-bottom: 0;
+  }
+  .step-marker {
+    margin-bottom: 36px;
   }
 }
 

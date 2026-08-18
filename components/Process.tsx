@@ -21,9 +21,14 @@ export default function Process() {
       <div className="steps">
         {steps.map((s, i) => (
           <Reveal as="article" key={s.number} delay={i * 0.06}>
-            <span className="step-num">{s.number}</span>
-            <h3>{s.title}</h3>
-            <p>{s.text}</p>
+            <div className="step-marker">
+              <span className="step-num">{s.number}</span>
+            </div>
+            <div className="step-copy">
+              <span className="step-label">Schritt {i + 1}</span>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+            </div>
           </Reveal>
         ))}
       </div>
