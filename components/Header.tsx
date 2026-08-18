@@ -24,6 +24,13 @@ export default function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
   return (
     <>
       <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
@@ -37,26 +44,9 @@ export default function Header() {
           />
         </a>
         <nav
-          className="main-nav"
+          className={`main-nav ${open ? "open" : ""}`}
+          id="main-navigation"
           aria-label="Hauptnavigation"
-          style={
-            open
-              ? {
-                  display: "flex",
-                  flexDirection: "column",
-                  position: "fixed",
-                  top: 0,
-                  right: 0,
-                  bottom: 0,
-                  background: "#1c1a16",
-                  padding: "110px 40px",
-                  gap: "26px",
-                  fontSize: "18px",
-                  width: "70%",
-                  zIndex: 30,
-                }
-              : undefined
-          }
         >
           <a href="#leistungen" onClick={() => setOpen(false)}>
             Leistungen
@@ -67,6 +57,9 @@ export default function Header() {
           <a href="#unternehmen" onClick={() => setOpen(false)}>
             Unternehmen
           </a>
+          <a className="mobile-contact-link" href="#kontakt" onClick={() => setOpen(false)}>
+            Kontakt
+          </a>
         </nav>
         <a className="header-cta" href="#kontakt">
           Projekt anfragen
@@ -74,6 +67,8 @@ export default function Header() {
         <button
           className="menu-btn"
           aria-label={open ? "Menü schließen" : "Menü öffnen"}
+          aria-expanded={open}
+          aria-controls="main-navigation"
           onClick={() => setOpen((v) => !v)}
         >
           {open ? "SCHLIESSEN" : "MENÜ"}

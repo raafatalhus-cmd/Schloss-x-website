@@ -148,6 +148,9 @@ nav.main-nav a {
 nav.main-nav a:hover {
   opacity: 1;
 }
+.mobile-contact-link {
+  display: none;
+}
 .header-cta {
   font-family: var(--mono);
   font-size: 12px;
@@ -172,6 +175,8 @@ nav.main-nav a:hover {
   font-size: 12px;
   letter-spacing: 0.05em;
   cursor: pointer;
+  position: relative;
+  z-index: 31;
 }
 .menu-backdrop {
   display: none;
@@ -964,6 +969,30 @@ footer .legal {
   nav.main-nav {
     display: none;
   }
+  nav.main-nav.open {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: min(76vw, 390px);
+    padding: 112px 40px 48px;
+    gap: 26px;
+    background: var(--ink);
+    border-left: 1px solid var(--line-on-dark);
+    box-shadow: -20px 0 50px rgba(0, 0, 0, 0.22);
+    font-size: 18px;
+    z-index: 30;
+  }
+  nav.main-nav.open a {
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line-on-dark);
+  }
+  nav.main-nav.open .mobile-contact-link {
+    display: block;
+    color: var(--kupfer-soft);
+  }
   .menu-btn {
     display: block;
   }
@@ -1068,6 +1097,17 @@ footer .legal {
   }
 }
 @media (max-width: 560px) {
+  .site-header,
+  .site-header.scrolled {
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+  .header-cta {
+    display: none;
+  }
+  .brand-logo img {
+    width: 145px;
+  }
   h1 {
     font-size: 38px;
   }
