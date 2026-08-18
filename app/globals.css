@@ -290,17 +290,26 @@ h1 {
   border-color: var(--kupfer-soft);
 }
 
-.hero-visual {
+.hero-media {
   position: relative;
   z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  min-height: 820px;
+  margin-right: -5.5vw;
+  overflow: hidden;
 }
-.hero-visual svg {
-  width: 100%;
-  height: auto;
-  max-width: 560px;
+.hero-media img {
+  object-fit: cover;
+  object-position: 58% center;
+}
+.hero-media::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(90deg, var(--ink) 0%, rgba(28, 26, 22, 0.72) 18%, transparent 55%),
+    linear-gradient(0deg, rgba(28, 26, 22, 0.42), transparent 35%);
+  pointer-events: none;
 }
 .hero-region {
   position: absolute;
@@ -315,49 +324,6 @@ h1 {
 .hero-region b {
   color: var(--kupfer-soft);
   font-weight: 500;
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-.hero-visual .node {
-  opacity: 0;
-  animation: nodeIn 0.4s ease forwards;
-}
-.hero-visual .node:nth-of-type(1) {
-  animation-delay: 0.3s;
-}
-.hero-visual .node:nth-of-type(2) {
-  animation-delay: 0.75s;
-}
-.hero-visual .node:nth-of-type(3) {
-  animation-delay: 1.15s;
-}
-.hero-visual .node:nth-of-type(4) {
-  animation-delay: 1.35s;
-}
-.hero-visual .node:nth-of-type(5) {
-  animation-delay: 1.75s;
-}
-.hero-visual .node:nth-of-type(6) {
-  animation-delay: 2s;
-}
-@keyframes nodeIn {
-  to {
-    opacity: 1;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  #circuitPath {
-    animation: none !important;
-    stroke-dashoffset: 0 !important;
-  }
-  .hero-visual .node {
-    animation: none !important;
-    opacity: 1 !important;
-  }
 }
 
 /* ---------- Section basics ---------- */
@@ -722,8 +688,14 @@ footer .legal {
   .hero-copy {
     padding: 150px 0 50px;
   }
-  .hero-visual {
-    padding-bottom: 60px;
+  .hero-media {
+    min-height: 420px;
+    margin: 0 -6vw;
+  }
+  .hero-media::before {
+    background:
+      linear-gradient(180deg, var(--ink) 0%, transparent 28%),
+      linear-gradient(0deg, rgba(28, 26, 22, 0.48), transparent 45%);
   }
   .hero-region {
     position: static;
