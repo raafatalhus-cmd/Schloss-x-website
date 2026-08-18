@@ -713,6 +713,7 @@ h2 {
 /* ---------- Process ---------- */
 .process {
   background: var(--paper);
+  padding-top: 155px;
 }
 .steps {
   display: grid;
@@ -722,8 +723,8 @@ h2 {
   background: var(--paper);
 }
 .steps article {
-  min-height: 260px;
-  padding: 28px 28px 34px;
+  min-height: 205px;
+  padding: 26px 28px 30px;
   border-right: 1px solid var(--line);
   position: relative;
   display: flex;
@@ -746,7 +747,7 @@ h2 {
   background: var(--paper);
   position: relative;
   z-index: 1;
-  margin-bottom: 58px;
+  margin-bottom: 38px;
   transition:
     color 0.3s,
     background 0.3s,
@@ -758,7 +759,7 @@ h2 {
   height: 1px;
   left: 76px;
   right: -1px;
-  top: 52px;
+  top: 50px;
   background: linear-gradient(90deg, var(--kupfer), var(--line));
 }
 .steps article:hover .step-marker {
@@ -965,13 +966,13 @@ footer .legal {
   .steps article {
     border-right: none !important;
     border-bottom: 1px solid var(--line);
-    min-height: 220px;
+    min-height: 185px;
   }
   .steps article:last-child {
     border-bottom: 0;
   }
   .step-marker {
-    margin-bottom: 36px;
+    margin-bottom: 28px;
   }
 }
 
