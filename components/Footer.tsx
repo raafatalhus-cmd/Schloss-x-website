@@ -1,12 +1,17 @@
 import { company } from "@/lib/content";
+import Image from "next/image";
 
 export default function Footer() {
   return (
     <footer>
-      <div className="brand">
-        {company.brandShort}
-        <b>{company.brandAccent}</b>
-      </div>
+      <a className="brand brand-logo footer-logo" href="#top" aria-label="SCHLOSS-X Startseite">
+        <Image
+          src="/schloss-x-logo.png"
+          alt="SCHLOSS-X"
+          width={1200}
+          height={354}
+        />
+      </a>
       <p>Moderne Elektrotechnik. Intelligent verbunden.</p>
       <div className="legal">
         <span>© {new Date().getFullYear()} {company.name}</span>

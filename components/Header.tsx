@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { company } from "@/lib/content";
+import Image from "next/image";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -27,9 +27,14 @@ export default function Header() {
   return (
     <>
       <header className={`site-header ${scrolled ? "scrolled" : ""}`}>
-        <a className="brand" href="#top">
-          {company.brandShort}
-          <b>{company.brandAccent}</b>
+        <a className="brand brand-logo" href="#top" aria-label="SCHLOSS-X Startseite">
+          <Image
+            src="/schloss-x-logo.png"
+            alt="SCHLOSS-X"
+            width={1200}
+            height={354}
+            priority
+          />
         </a>
         <nav
           className="main-nav"
