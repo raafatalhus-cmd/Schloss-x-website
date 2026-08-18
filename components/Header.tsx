@@ -65,7 +65,10 @@ export default function Header() {
           </a>
         </nav>
         <div className="header-actions">
-          <a className="header-mail" href="mailto:info@schloss-x.de" aria-label="E-Mail an SCHLOSS-X">
+          <a className="header-icon" href="#kontakt" aria-label="Telefonkontakt – Nummer folgt" title="Telefonnummer folgt">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.2 3.5 10 7.8 8.2 10c1.2 2.5 3.2 4.5 5.8 5.8l2.2-1.8 4.3 2.8-1.2 3c-.4 1-1.5 1.5-2.5 1.2C9.5 19.3 4.7 14.5 3 7.2c-.3-1 .2-2.1 1.2-2.5l3-1.2Z" /></svg>
+          </a>
+          <a className="header-icon" href="mailto:info@schloss-x.de" aria-label="E-Mail an SCHLOSS-X">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6.5h18v12H3zM3.5 7l8.5 7 8.5-7" /></svg>
           </a>
           <a className="header-cta" href="#kontakt">Projekt anfragen</a>
