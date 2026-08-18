@@ -477,19 +477,50 @@ h2 {
   position: relative;
   min-height: 420px;
   display: flex;
-  align-items: flex-end;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
   padding: 32px;
+}
+.qual-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 1px solid var(--line-on-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: 0.02em;
+  color: var(--kupfer-soft);
+}
+.qual-portrait-caption {
+  text-align: center;
+}
+.qual-portrait-caption strong {
+  display: block;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+.qual-portrait-caption span {
+  display: block;
+  font-family: var(--mono);
+  font-size: 10.5px;
+  letter-spacing: 0.05em;
+  color: var(--muted-on-dark);
 }
 .qual-portrait-note {
   font-family: var(--mono);
-  font-size: 10.5px;
+  font-size: 10px;
   color: var(--muted-on-dark);
-  letter-spacing: 0.05em;
-  line-height: 1.6;
-  border-top: 1px solid var(--line-on-dark);
-  padding-top: 16px;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
 }
-.qual-body {
   padding: 64px;
 }
 .qual-body h2 {
