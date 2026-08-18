@@ -58,7 +58,7 @@ export const company = {
     zipCity: "49205 Hasbergen",
   },
   serviceArea: "Hasbergen · Osnabrück und Umgebung",
-  email: "kontakt@schloss-x.de",
+  email: "info@schloss-x.de",
   // TODO: Telefonnummer ergänzen, sobald final freigegeben (siehe Analyse: fehlt für Vertrauen)
   phone: null as string | null,
 } as const;
