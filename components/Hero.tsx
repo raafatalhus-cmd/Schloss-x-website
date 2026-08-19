@@ -1,7 +1,12 @@
 import { company } from "@/lib/content";
 
 export default function Hero() {
-  const nodes = [[92, 132], [310, 132], [380, 270], [300, 350], [438, 410]];
+  const systemNodes = [
+    { x: 108, y: 142, label: "BELEUCHTUNG", labelX: 108, labelY: 118, anchor: "middle" },
+    { x: 412, y: 142, label: "NETZWERK", labelX: 412, labelY: 118, anchor: "middle" },
+    { x: 108, y: 416, label: "SICHERHEIT", labelX: 108, labelY: 448, anchor: "middle" },
+    { x: 412, y: 416, label: "SENSORIK", labelX: 412, labelY: 448, anchor: "middle" },
+  ];
 
   return (
     <section className="hero" id="top">
@@ -31,30 +36,36 @@ export default function Hero() {
           <g className="plan-fill"><path d="M46 56H474V504H46Z" /></g>
           <g className="plan-lines">
             <path d="M46 56H474V504H46Z" />
-            <path d="M46 198H474M46 352H474M250 56V198M330 198V352M170 352V504" />
-            <path className="plan-detail" d="M72 82H162M276 82H356M356 224H446M72 378H144M196 378H268" />
+            <path d="M46 230H196M324 230H474M46 338H196M324 338H474" />
+            <path className="plan-detail" d="M74 84H154M366 84H446M74 476H154M366 476H446" />
           </g>
-          <path id="circuitPath" d="M92 132H220V270H380V410H438" pathLength={1} />
-          <path className="circuit-secondary" d="M220 270V132H310" pathLength={1} />
-          <path className="circuit-secondary" d="M220 270H140V420H300V350H380" pathLength={1} />
+          <g className="system-connections">
+            <path id="circuitPath" d="M260 280H196V142H108" pathLength={1} />
+            <path className="circuit-secondary" d="M260 280H324V142H412" pathLength={1} />
+            <path className="circuit-secondary" d="M260 296H196V416H108" pathLength={1} />
+            <path className="circuit-secondary" d="M260 296H324V416H412" pathLength={1} />
+          </g>
           <g className="nodes">
-            {nodes.map(([cx, cy], index) => (
-              <g className="node" key={`${cx}-${cy}`} style={{ animationDelay: `${0.5 + index * 0.18}s` }}>
-                <circle className="node-ring" cx={cx} cy={cy} r="7" />
-                <circle className="node-core" cx={cx} cy={cy} r="2.5" />
+            {systemNodes.map(({ x, y }, index) => (
+              <g className="node" key={`${x}-${y}`} style={{ animationDelay: `${0.5 + index * 0.18}s` }}>
+                <circle className="node-ring" cx={x} cy={y} r="7" />
+                <circle className="node-core" cx={x} cy={y} r="2.5" />
               </g>
             ))}
+            <g className="node node-central" style={{ animationDelay: "0.35s" }}>
+              <rect x="244" y="270" width="32" height="36" rx="2" />
+              <circle className="node-core" cx="260" cy="288" r="3" />
+            </g>
           </g>
           <g className="node-labels">
-            <text x="76" y="112">BELEUCHTUNG</text>
-            <text x="286" y="112">NETZWERK</text>
-            <text x="390" y="258">STEUERUNG</text>
-            <text x="274" y="336">SICHERHEIT</text>
-            <text x="416" y="434">SENSORIK</text>
+            {systemNodes.map(({ label, labelX, labelY, anchor }) => (
+              <text key={label} x={labelX} y={labelY} textAnchor={anchor as "middle"}>{label}</text>
+            ))}
+            <text className="central-label" x="260" y="326" textAnchor="middle">ZENTRALE STEUERUNG</text>
           </g>
-          <g className="system-status" transform="translate(370 82)">
+          <g className="system-status" transform="translate(354 84)">
             <circle cx="0" cy="0" r="3" />
-            <text x="10" y="3">SYSTEMSTATUS · VERBUNDEN</text>
+            <text x="10" y="3">VERBUNDEN</text>
           </g>
         </svg>
         <span className="hero-visual-caption">Vernetzte Gebäudetechnik</span>

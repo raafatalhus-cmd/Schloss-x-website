@@ -347,11 +347,11 @@ h1 {
   fill: none;
   stroke: #5a574e;
   stroke-width: 1.25;
-  opacity: 0.6;
+  opacity: 0.42;
 }
 .plan-lines .plan-detail {
   stroke: #3a382f;
-  opacity: 0.55;
+  opacity: 0.38;
 }
 .plan-labels,
 .node-labels,
@@ -389,7 +389,17 @@ h1 {
   stroke-width: 1.8;
 }
 .node-core { fill: var(--kupfer-soft); }
-.system-status { opacity: 0.8; }
+.node-central rect {
+  fill: var(--ink);
+  stroke: var(--kupfer-soft);
+  stroke-width: 1.8;
+}
+.node-labels .central-label {
+  fill: var(--kupfer-soft);
+  font-size: 8px;
+  letter-spacing: 0.8px;
+}
+.system-status { opacity: 0.95; }
 .system-status circle { fill:var(--kupfer-soft); stroke:none; }
 .system-status text { font-size:6px; letter-spacing:1px; fill:var(--muted-on-dark); }
 .hero-region {
