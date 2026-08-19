@@ -13,8 +13,9 @@ function ServiceIcon({ index }: { index: number }) {
 
   const icons = [
     <>
-      <path d="M8 3v5M16 3v5M6 8h12v3a6 6 0 0 1-12 0V8Z" {...common} />
-      <path d="M12 17v4M9 21h6" {...common} />
+      <rect x="4" y="3" width="16" height="18" rx="1" {...common} />
+      <path d="M8 7h8M8 11h3M14 11h2M8 15h2M13 15h3M8 18h8" {...common} />
+      <circle cx="9.5" cy="11" r=".5" fill="currentColor" stroke="none" />
     </>,
     <>
       <path d="M9 17h6M10 21h4" {...common} />
