@@ -18,6 +18,11 @@ export default function Hero() {
           <a className="button primary" href="#kontakt">Projekt besprechen →</a>
           <a className="text-link" href="#leistungen">Leistungen ansehen</a>
         </div>
+        <div className="hero-proof" aria-label="Arbeitsweise von SCHLOSS-X">
+          <span><b>01</b> Persönlich geplant</span>
+          <span><b>02</b> Sauber umgesetzt</span>
+          <span><b>03</b> Verständlich übergeben</span>
+        </div>
       </div>
 
       <div className="hero-visual" aria-hidden="true">
@@ -49,17 +54,12 @@ export default function Hero() {
             <text x="388" y="269">STEUERUNG</text><text x="330" y="452">SICHERHEIT</text>
             <text x="420" y="452">SENSOR</text>
           </g>
-          <g className="system-status" transform="translate(414 76)">
+          <g className="system-status" transform="translate(388 76)">
             <circle cx="0" cy="0" r="3" />
             <text x="10" y="3">SYSTEM AKTIV</text>
           </g>
         </svg>
         <span className="hero-visual-caption">Planung · Vernetzung · Betrieb</span>
-      </div>
-      <div className="hero-proof" aria-label="Arbeitsweise von SCHLOSS-X">
-        <span><b>01</b> Persönlich geplant</span>
-        <span><b>02</b> Sauber umgesetzt</span>
-        <span><b>03</b> Verständlich übergeben</span>
       </div>
       <p className="hero-region"><b>Standort · </b>{company.serviceArea}</p>
     </section>
