@@ -26,6 +26,7 @@ export default function Hero() {
       </div>
 
       <div className="hero-visual" aria-hidden="true">
+        <span className="hero-visual-kicker">Gebäudesystem · 01</span>
         <svg viewBox="0 0 520 560" xmlns="http://www.w3.org/2000/svg">
           <g className="plan-fill"><path d="M40 46H480V514H40Z" /></g>
           <g className="plan-lines">
@@ -58,6 +59,7 @@ export default function Hero() {
             <text x="-24" y="32">SYSTEM AKTIV</text>
           </g>
         </svg>
+        <span className="hero-visual-caption">Planung · Vernetzung · Betrieb</span>
       </div>
       <p className="hero-region"><b>Standort · </b>{company.serviceArea}</p>
     </section>
