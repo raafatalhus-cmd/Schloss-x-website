@@ -14,9 +14,14 @@ export default function Projects() {
       </Reveal>
       <div className="project-grid">
         {projects.map((project, index) => (
-          <Reveal as="article" key={project.slug} delay={index * 0.06}>
+          <Reveal
+            as="article"
+            className={`project-card ${index === 0 ? "project-card-featured" : "project-card-secondary"}`}
+            key={project.slug}
+            delay={index * 0.06}
+          >
             <div className={`project-visual visual-${index + 1}`} aria-hidden="true">
-              <span>{project.status}</span>
+              <span className="project-status">{index === 0 ? "HAUPTREFERENZ · MUSTER" : project.status}</span>
               <div className="project-diagram">
                 <i className="diagram-line line-a" />
                 <i className="diagram-line line-b" />
@@ -24,11 +29,16 @@ export default function Projects() {
                 <i className="diagram-node node-b" />
                 <i className="diagram-node node-c" />
               </div>
+              <em className="project-image-note">Projektbild · Platzhalter</em>
               <small>{String(index + 1).padStart(2, "0")} / 03</small>
             </div>
             <div className="project-content">
-              <span className="project-category">{project.category} · {project.location}</span>
+              <div className="project-meta">
+                <span className="project-category">{project.category}</span>
+                <span className="project-location">{project.location}</span>
+              </div>
               <h3>{project.title}</h3>
+              <span className="project-result-label">Ergebnis</span>
               <p>{project.result}</p>
               <Link href={`/projekte/${project.slug}`}>Projekt ansehen →</Link>
             </div>
