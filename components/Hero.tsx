@@ -1,7 +1,7 @@
 import { company } from "@/lib/content";
 
 export default function Hero() {
-  const nodes = [[76, 126], [150, 262], [258, 118], [418, 284], [366, 430], [438, 430]];
+  const nodes = [[92, 132], [310, 132], [380, 270], [300, 350], [438, 410]];
 
   return (
     <section className="hero" id="top">
@@ -26,21 +26,17 @@ export default function Hero() {
       </div>
 
       <div className="hero-visual" aria-hidden="true">
-        <span className="hero-visual-kicker">Gebäudesystem · 01</span>
+        <span className="hero-visual-kicker">Systemübersicht · 01</span>
         <svg viewBox="0 0 520 560" xmlns="http://www.w3.org/2000/svg">
-          <g className="plan-fill"><path d="M40 46H480V514H40Z" /></g>
+          <g className="plan-fill"><path d="M46 56H474V504H46Z" /></g>
           <g className="plan-lines">
-            <path d="M40 46H480V514H40Z" />
-            <path d="M40 188H236V46M236 188H480M320 188V352H480M40 352H174V514M174 352H320M392 352V514" />
-            <path className="plan-detail" d="M88 188V164M212 188V164M320 236H344M174 402H198M392 402H416" />
+            <path d="M46 56H474V504H46Z" />
+            <path d="M46 198H474M46 352H474M250 56V198M330 198V352M170 352V504" />
+            <path className="plan-detail" d="M72 82H162M276 82H356M356 224H446M72 378H144M196 378H268" />
           </g>
-          <g className="plan-labels">
-            <text x="58" y="72">01 · LICHT</text>
-            <text x="338" y="214">02 · NETZWERK</text>
-            <text x="58" y="378">03 · SICHERHEIT</text>
-          </g>
-          <path id="circuitPath" d="M76 126H150V262H258V118H418V284H366V430H438" pathLength={1} />
-          <path className="circuit-secondary" d="M150 262H92V430H238V388H366" pathLength={1} />
+          <path id="circuitPath" d="M92 132H220V270H380V410H438" pathLength={1} />
+          <path className="circuit-secondary" d="M220 270V132H310" pathLength={1} />
+          <path className="circuit-secondary" d="M220 270H140V420H300V350H380" pathLength={1} />
           <g className="nodes">
             {nodes.map(([cx, cy], index) => (
               <g className="node" key={`${cx}-${cy}`} style={{ animationDelay: `${0.5 + index * 0.18}s` }}>
@@ -50,16 +46,18 @@ export default function Hero() {
             ))}
           </g>
           <g className="node-labels">
-            <text x="52" y="111">LICHT</text><text x="228" y="102">NETZWERK</text>
-            <text x="388" y="269">STEUERUNG</text><text x="330" y="452">SICHERHEIT</text>
-            <text x="420" y="452">SENSOR</text>
+            <text x="76" y="112">BELEUCHTUNG</text>
+            <text x="286" y="112">NETZWERK</text>
+            <text x="390" y="258">STEUERUNG</text>
+            <text x="274" y="336">SICHERHEIT</text>
+            <text x="416" y="434">SENSORIK</text>
           </g>
-          <g className="system-status" transform="translate(388 76)">
+          <g className="system-status" transform="translate(370 82)">
             <circle cx="0" cy="0" r="3" />
-            <text x="10" y="3">SYSTEM AKTIV</text>
+            <text x="10" y="3">SYSTEMSTATUS · VERBUNDEN</text>
           </g>
         </svg>
-        <span className="hero-visual-caption">Planung · Vernetzung · Betrieb</span>
+        <span className="hero-visual-caption">Vernetzte Gebäudetechnik</span>
       </div>
       <p className="hero-region"><b>Standort · </b>{company.serviceArea}</p>
     </section>
