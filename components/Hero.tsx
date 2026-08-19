@@ -61,7 +61,7 @@ export default function Hero() {
             {systemNodes.map(({ label, labelX, labelY, anchor }) => (
               <text key={label} x={labelX} y={labelY} textAnchor={anchor as "middle"}>{label}</text>
             ))}
-            <text className="central-label" x="260" y="326" textAnchor="middle">ZENTRALE STEUERUNG</text>
+            <text className="central-label" x="260" y="336" textAnchor="middle">ZENTRALE STEUERUNG</text>
           </g>
           <g className="system-status" transform="translate(354 84)">
             <circle cx="0" cy="0" r="3" />
