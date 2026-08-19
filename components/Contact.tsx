@@ -1,5 +1,6 @@
 import Reveal from "./Reveal";
 import { company } from "@/lib/content";
+import ContactForm from "./ContactForm";
 
 export default function Contact() {
   return (
@@ -24,24 +25,11 @@ export default function Contact() {
         </Reveal>
 
         <Reveal as="div" className="contact-panel" delay={0.08}>
-          <p className="contact-panel-label">Direkter Kontakt</p>
+          <p className="contact-panel-label">Projektanfrage · Testversion</p>
           <a className="contact-email" href={`mailto:${company.email}`}>
             {company.email}
           </a>
-          <div className="contact-brief">
-            <p>Für eine erste Einschätzung helfen uns:</p>
-            <ul>
-              <li>Art des Vorhabens</li>
-              <li>Ort des Projekts</li>
-              <li>Gewünschter Zeitraum</li>
-            </ul>
-          </div>
-          <a
-            className="button inverse contact-button"
-            href={`mailto:${company.email}?subject=Projektanfrage%20an%20SCHLOSS-X`}
-          >
-            Projekt anfragen <span aria-hidden="true">→</span>
-          </a>
+          <ContactForm />
           <div className="contact-meta">
             <span>
               <b>Standort</b>

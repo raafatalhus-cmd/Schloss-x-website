@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
+  const base = process.env.NEXT_PUBLIC_SITE_URL || "https://schloss-x-website-fawn.vercel.app";
   return {
     rules: { userAgent: "*", allow: "/" },
-    sitemap: "https://schloss-x-website-fawn.vercel.app/sitemap.xml",
+    sitemap: `${base}/sitemap.xml`,
   };
 }

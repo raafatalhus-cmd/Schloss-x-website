@@ -37,8 +37,11 @@ const fraunces = Fraunces({
   display: "swap",
 });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://schloss-x-website-fawn.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://schloss-x-website-fawn.vercel.app"),
+  metadataBase: new URL(siteUrl),
+  verification: { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION },
   title: "SCHLOSS-X — Elektrotechnik & intelligente Gebäudesysteme",
   description:
     "SCHLOSS-X verbindet fundiertes Elektrohandwerk mit moderner IoT-Kompetenz — für Technik, die zuverlässig zusammenspielt. Hasbergen, Osnabrück und Umgebung.",
@@ -84,7 +87,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Electrician",
               name: "SCHLOSS-X e.K.",
-              url: "https://schloss-x-website-fawn.vercel.app",
+              url: siteUrl,
               email: "info@schloss-x.de",
               address: {
                 "@type": "PostalAddress",
